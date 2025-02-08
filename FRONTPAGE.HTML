@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Law Associates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f3f;
+            color: white;
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            background-color: #0b0f3f;
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #c5a47e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #c5a47e;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth-button {
+            background-color: #c5a47e;
+            color: #0b0f3f;
+            padding: 10px 25px;
+            border-radius: 3px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #b08f69;
+            transform: translateY(-2px);
+        }
+
+        /* Logo and Company Name */
+        .header-section {
+            margin-top: 120px;
+            padding: 50px;
+            text-align: center;
+            background: rgba(197, 164, 126, 0.1);
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 30px;
+           padding: 30px;
+           border: 2px solid #c5a47e;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            padding: 15px;
+            background: white;
+        }
+
+        .company-name {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #c5a47e;
+        }
+
+        header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.member-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+}
+
+.member-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.member-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.member-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.member-details p strong {
+    color: #000;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #0056b3;
+}
+
+        /* Interactive Elements */
+        .parallax-section {
+            height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section div h1 {
+    color: #fff;
+    font-size: 1rem;
+}
+
+section div p{
+    color: #fff;
+}
+
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section marquee {
+    color: #fff;
+    font-weight: bold;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 22%;
+    margin: 10px 0;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 18px; 
+    color: #fff;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-icon:hover img {
+    transform: rotate(360deg);
+}
+
+.service-details h2 {
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Style for individual service types */
+.box-style1 {
+    background-color: #e3f2fd;
+}
+
+.box-style2 {
+    background-color: #f1f8e9;
+}
+
+.box-style3 {
+    background-color: #fff3e0;
+}
+
+.box-style4 {
+    background-color: #ffe0b2;
+}
+
+.box-style5 {
+    background-color: #e8f5e9;
+}
+
+.service-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    color: #1e3d58;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #000; /* Black font color inside the content box */
+}
+
+em {
+    font-style: italic;
+    color: #555;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 60px 0;
+    background-color: #0b0f3f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-box {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border: 10px solid #fff;
+    text-align: left; /* Align text to the left */
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Container for contact page */
+.contact-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading */
+.main-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Intro text */
+.intro-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Contact information styling */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    width: 30%;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-detail {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 22%;
+    padding: 10px;
+    margin: 0 15px;
+}
+
+.footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-detail {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.footer a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #4CAF50;
+}
+
+/* Quick Links and Follow Us lists */
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #f1f1f1;
+}
+
+.footer-section a:hover {
+    color: #4CAF50;
+}
+
+/* License styling */
+.license {
+    width: 100%;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #bbb;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+/* Responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.clients-section {
+            padding: 80px 140px;
+            color: white;
+        }
+        .clients-section h2 {
+            font-size: 32px;
+            padding: 70px;
+            font-weight: bold;
+        }    
+
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 1px;
+        }
+        .client-logo {
+            width: 120px;
+            filter: grayscale(100%);
+            transition: transform 0.5s ease-in-out, filter 0.3s;
+        }
+        .client-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.2);
+        }
+        .client-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav> 
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#our-services">Our Services</a>
+            <a href="#our-team">Our Team</a>
+            <a href="#about-us">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="Existing_User.html"><div class="auth-button">Existing User</div></a>
+            <a href="Register_User.html"><div class="auth-button">Register as User</div></a>
+            <a href="lawyerscategory.html"><div class="auth-button">Register as Lawyer</div></a>
+        </div>
+    </nav>
+
+    <section id="home" class="header-section">
+        <div class="logo-container">
+            <img src="" alt="Law Firm Logo" class="logo" width="100%" height="100%">
+            <h1 class="company-name">NMAK</h1>
+            <img src=""width="50%" height="50%">
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Lawyer Categories</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Civil</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <h3>Criminal</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <h3>Corporate</h3>
+                <p></p>
+            </div>
+            <div class="service-item">
+                <h3>Real estate</h3>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-services">
+        <header>
+            <h1>Our Best Legal Services</h1>
+            <p></p>
+        </header>
+    
+        <div class="services-container">
+            <!-- Service 1: Legal Consultation -->
+            <div class="service-box box-style1">
+                <div class="service-icon">
+                    <img class="service-img" src="" alt="">
+                </div>
+                <div class="service-details">
+                    <h2>Legal Consultation</h2>
+                    <p></p>
+                </div>
+            </div>
+    
+            <!-- Service 2: Litigation Services -->
+            <div class="service-box box-style2">
+                <div class="service-icon">
+                    <img class="service-img" src="" alt="">
+                </div>
+                <div class="service-details">
+                    <h2>Litigation Services</h2>
+                    <p></p>
+                </div>
+            </div>
+    
+            <!-- Service 3: Corporate Law -->
+            <div class="service-box box-style3">
+                <div class="service-icon">
+                    <img class="service-img" src="" alt="">
+                </div>
+                <div class="service-details">
+                    <h2>Corporate Law</h2>
+                    <p></p>
+                </div>
+            </div>
+    
+            <!-- Service 4: Criminal Defense -->
+            <div class="service-box box-style4">
+                <div class="service-icon">
+                    <img class="service-img" src="" alt="">
+                </div>
+                <div class="service-details">
+                    <h2>Criminal Defense</h2>
+                    <p></p>
+                </div>
+            </div>
+    
+            <!-- Service 5: Family Law -->
+            <div class="service-box box-style5">
+                <div class="service-icon">
+                    <img class="service-img" src="" alt="">
+                </div>
+                <div class="service-details">
+                    <h2>Family Law</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>    
+    </section><br><br><br>
+
+    <section id="our-team">
+        <header>
+            <h1>MEET THE PEOPLE BEHIND NMAK</h1>
+        </header>
+    
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="" alt="Team Member 1">
+                </div>
+                <div class="member-details">
+                    <h2></h2>
+                    <p><strong>Age:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p><strong>Phone:</strong></p>
+                    <p><strong>Qualifications:</strong></p>
+                    <div class="social-media">
+                        <a href="" target="_blank">LinkedIn</a>
+                        <a href="" target="_blank">github</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="" alt="Team Member 2">
+                </div>
+                <div class="member-details">
+                    <h2></h2>
+                    <p><strong>Age:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p><strong>Phone:</strong></p>
+                    <p><strong>Qualifications:</strong></p>
+                    <div class="social-media">
+                        <a href="" target="_blank">LinkedIn</a>
+                        <a href="" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="" alt="Team Member 3">
+                </div>
+                <div class="member-details">
+                    <h2></h2>
+                    <p><strong>Age:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p><strong>Phone:</strong></p>
+                    <p><strong>Qualifications:</strong> </p>
+                    <div class="social-media">
+                        <a href="" target="_blank">LinkedIn</a>
+                        <a href="" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="" alt="Team Member 4">
+                </div>
+                <div class="member-details">
+                    <h2></h2>
+                    <p><strong>Age:</strong></p>
+                    <p><strong>Email:</strong></p>
+                    <p><strong>Phone:</strong></p>
+                    <p><strong>Qualifications:</strong> </p>
+                    <div class="social-media">
+                        <a href="" target="_blank">LinkedIn</a>
+                        <a href="" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+              <br><br>
+
+    <section id="about-us" class="about-us">
+        <div class="container">
+            <div class="content-box">
+               <U><B><h1>About Us</h1></B></U>
+                <p> <strong></strong></em></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact-us" class="contact-container">
+        <h1 class="main-heading">Contact Us</h1>
+        <p class="intro-text"></p>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="info-item">
+                <h3 class="info-title">Email</h3>
+                <p class="info-detail"></p>
+            </div>
+            <div class="info-item">
+                <h3 class="info-title">Phone</h3>
+                <p class="info-detail"></p>
+            </div>
+            <div class="info-item">
+                <h3 class="info-title">Address</h3>
+                <p class="info-detail"></p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="footer-section quick-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section future-plans">
+                <h4 class="footer-heading">Future Plan</h4>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4 class="footer-heading">Contact Us</h4>
+                <p class="footer-detail"><br></p>
+                <p class="footer-detail"></p>
+            </div>
+            
+            <section class="clients-section">
+                <h2>Follow us on Social Media</h2>
+                <div class="clients-grid">
+                    <div class="client-card">
+                        <img src="" class="client-logo" alt="">
+                    </div>
+                    <div class="client-card">
+                        <img src="" class="client-logo" alt="">
+                    </div>
+                    <div class="client-card">
+                        <img src="" class="client-logo" alt="">
+                </div>
+            </section>
+
+            <div class="footer-section license">
+                <h4 class="footer-heading">License</h4>
+                <p class="footer-detail"></p>
+            </div>
+</body>
+</html>
